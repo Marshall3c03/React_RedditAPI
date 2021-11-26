@@ -20,7 +20,7 @@ const RedditContentContainer = () => {
     return(
         <div>
             <p>I am the reddit post container</p>
-            <RedditImageContainer />
+            <RedditImageContainer posts={posts}/>
         </div>
     )
 };
