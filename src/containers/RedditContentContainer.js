@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import RedditImageContainer from '../components/RedditImageContainer';
+import RedditPostsContainer from './RedditPostsContainer';
+import RedditInput from '../components/RedditInput';
 
-const RedditContentContainer = () => {
+const RedditContentContainer = ({ categories }) => {
 
     const [posts, setPosts] = useState([])
 
@@ -17,10 +18,13 @@ const RedditContentContainer = () => {
         console.log("Loaded Posts")
     })
 
+    
+
     return(
         <div>
             <p>I am the reddit post container</p>
-            <RedditImageContainer posts={posts}/>
+            <RedditInput />
+            <RedditPostsContainer categories={categories} posts={posts}/>
         </div>
     )
 };
