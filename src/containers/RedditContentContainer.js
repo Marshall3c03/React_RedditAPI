@@ -3,7 +3,7 @@ import RedditPostsContainer from './RedditPostsContainer';
 import RedditInput from '../components/RedditInput';
 
 const RedditContentContainer = ({ categories }) => {
-
+    
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
@@ -18,13 +18,17 @@ const RedditContentContainer = ({ categories }) => {
         console.log("Loaded Posts")
     })
 
+    const addPost = (submittedPost) => {
+        submittedPost.id = Date.now();
+        const updatedPosts = [...posts, submittedPost];
+        setPosts(updatedPosts);
+    }
     
-
     return(
         <div>
             <p>I am the reddit post container</p>
-            <RedditInput />
-            <RedditPostsContainer categories={categories} posts={posts}/>
+            <RedditInput onPostSubmit={(comment) => addPost(comment)}/>
+            <RedditPostsContainer  categories={categories} posts={posts}/>
         </div>
     )
 };
