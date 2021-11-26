@@ -1,6 +1,7 @@
 import React from 'react';
 import RedditCategories from '../components/RedditCategories';
 import RedditPost from '../components/RedditPost';
+import './RedditPostsContainer.css'
 
 const RedditPostsContainer = ({ posts, categories }) => {
 
@@ -9,13 +10,15 @@ const RedditPostsContainer = ({ posts, categories }) => {
     })
 
     const CategoryItems = categories.map(category => {
-        return <button>{category.name}</button>
+        return <button className="button">{category.name}</button>
     })
 
     return(
-        <div>
+        <div className="posts-container">
             <p>I am the Image Container</p>
-            {CategoryItems}
+            <div className="buttons">
+                {CategoryItems}
+            </div>
             {postItems}
         </div>
     )

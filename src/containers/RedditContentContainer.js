@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import RedditPostsContainer from './RedditPostsContainer';
 import RedditInput from '../components/RedditInput';
+import './RedditContentContainer.css'
 
 const RedditContentContainer = ({ categories }) => {
     
@@ -25,7 +26,7 @@ const RedditContentContainer = ({ categories }) => {
     }
     
     return(
-        <div>
+        <div className="body">
             <p>I am the reddit post container</p>
             <RedditInput onPostSubmit={(comment) => addPost(comment)}/>
             <RedditPostsContainer  categories={categories} posts={posts}/>
