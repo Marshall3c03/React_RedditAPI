@@ -27,7 +27,6 @@ const RedditContentContainer = ({ categories }) => {
     
     return(
         <div className="body">
-            <p>I am the reddit post container</p>
             <RedditInput onPostSubmit={(comment) => addPost(comment)}/>
             <RedditPostsContainer  categories={categories} posts={posts}/>
         </div>

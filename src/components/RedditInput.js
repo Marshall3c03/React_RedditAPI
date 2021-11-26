@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './RedditInput.css'
 
 const RedditInput = ({ posts, onPostSubmit }) => {
 
@@ -41,32 +42,37 @@ const RedditInput = ({ posts, onPostSubmit }) => {
     }
 
     return(
-        <div>
-            <p>I am the post input form</p>
-            <form onSubmit={handlePostSubmit}>
-                <input 
-                    type="text"
-                    placeholder="Enter Username"
-                    value={author}
-                    onChange={handleAuthorChange}
-                />
-                <input 
-                    type="text"
-                    placeholder="Enter Caption"
-                    value={title}
-                    onChange={handleTitleChange}
-                />
-                <input 
-                    type="text"
-                    placeholder="Enter Image Url..."
-                    value={url}
-                    onChange={handleUrlChange}
-                />
-                <input 
-                    type="submit"
-                    value="Post"
-                />
-            </form>
+        <div className="form-container">
+            <div className="actual-form-container">
+                <form className="form" onSubmit={handlePostSubmit}>
+                    <input 
+                        className="input"
+                        type="text"
+                        placeholder="Enter Username"
+                        value={author}
+                        onChange={handleAuthorChange}
+                    />
+                    <input 
+                        className="input"
+                        type="text"
+                        placeholder="Enter Caption"
+                        value={title}
+                        onChange={handleTitleChange}
+                    />
+                    <input 
+                        className="input"
+                        type="text"
+                        placeholder="Enter Image Url..."
+                        value={url}
+                        onChange={handleUrlChange}
+                    />
+                    <input 
+                        className="button"
+                        type="submit"
+                        value="Post"
+                    />
+                </form>
+            </div>
         </div>
     )
 }

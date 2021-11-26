@@ -15,7 +15,6 @@ const RedditPostsContainer = ({ posts, categories }) => {
 
     return(
         <div className="posts-container">
-            <p>I am the Image Container</p>
             <div className="buttons">
                 {CategoryItems}
             </div>
